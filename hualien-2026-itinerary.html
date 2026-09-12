@@ -161,13 +161,10 @@
       .schedule strong { color: var(--ink); }
       .schedule span { color: var(--muted); }
 
-      .spot-title { margin: 20px 0 10px; color: var(--night); font-size: 0.96rem; }
-      .spot-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
-      .spot-card { min-width: 0; overflow: hidden; border: 1px solid #dfebea; border-radius: 12px; background: #f8fbfa; }
-      .spot-card img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: #dce9e9; }
-      .spot-card div { padding: 9px 10px 10px; }
-      .spot-card strong { display: block; color: var(--night); font-size: 0.9rem; line-height: 1.4; }
-      .spot-card span { display: block; margin-top: 2px; color: var(--muted); font-size: 0.76rem; line-height: 1.45; }
+      .schedule li.has-photo { grid-template-columns: 112px minmax(0, 1fr) 190px; align-items: start; }
+      .schedule-photos { grid-column: 3; display: grid; gap: 7px; min-width: 0; }
+      .schedule-photos img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 10px; background: #dce9e9; }
+      .schedule-photos span { font-size: 0.78rem; text-align: center; }
 
       .notes-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 18px; margin-top: 26px; }
       .panel { border: 1px solid var(--line); border-radius: 18px; padding: 22px; background: rgba(255,255,255,0.88); box-shadow: 0 10px 25px rgba(20, 60, 72, 0.05); }
@@ -193,8 +190,11 @@
         figure { min-height: 215px; grid-row: 1; }
         .day-copy { padding: 22px; }
         .timeline { padding: 7px 20px 20px; }
-        .schedule li { grid-template-columns: 82px minmax(0, 1fr); gap: 9px; }
-        .spot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .schedule li { grid-template-columns: minmax(0, 1fr); gap: 4px 12px; }
+        .schedule li.has-photo { grid-template-columns: minmax(0, 1fr) clamp(88px, 25vw, 132px); }
+        .schedule li > time, .schedule li > div:not(.schedule-photos) { grid-column: 1; }
+        .schedule li > .schedule-photos { grid-column: 2; grid-row: 1 / span 2; }
+        .schedule-photos img { aspect-ratio: 1 / 1; }
         .intro { display: block; }
         .intro .muted { margin-top: 7px; }
       }
@@ -227,8 +227,8 @@
     <main class="wrap">
       <section class="intro" aria-labelledby="schedule-title">
         <div>
-          <h2 id="schedule-title">一眼看懂這三天</h2>
-          <p class="muted">需要訂位或當天依天候調整的項目，都保留在頁面上提醒大家。</p>
+          <h2 id="schedule-title">這三天，我們一起去走走</h2>
+          <p class="muted">去海邊吹吹風、逛逛老屋，再一起吃頓好吃的。來看看每天要去哪裡，挑一站你最期待的！</p>
         </div>
         <p class="muted">台北 ⇄ 花蓮 · 第一天不租車</p>
       </section>
@@ -251,20 +251,13 @@
             <h4>今日時間軸</h4>
             <ol class="schedule">
               <li><time>08:00–09:00</time><div><strong>台北出發</strong><br><span>目標搭直達花蓮的自強號；實際車次等台鐵開放訂票後確認。</span></div></li>
-              <li><time>10:30–11:30</time><div><strong>抵達花蓮車站</strong><br><span>以此為目標抵達區間。</span></div></li>
-              <li><time>11:30–13:25</time><div><strong>DCC 洄瀾廣場午餐</strong><br><span>首選好正點港式點心；連假營業與座位待確認。</span></div></li>
-              <li><time>13:30–15:00</time><div><strong>兩台計程車 → 麗翔酒店</strong><br><span>13:45 抵達、寄放行李並辦理入住前手續；15:00 正式入住。</span></div></li>
-              <li><time>15:00–16:10</time><div><strong>飯店休息／使用設施</strong><br><span>不加塞景點，保留抵達日緩衝。</span></div></li>
-              <li><time>16:20–17:50</time><div><strong>兩台計程車 → 七星潭</strong><br><span>16:35 起看海、等日落。</span></div></li>
-              <li><time>18:00–20:10</time><div><strong>東大門夜市晚餐 → 步行回飯店</strong><br><span>18:20–20:00 用餐；夜市到麗翔酒店步行返程。</span></div></li>
+              <li class="has-photo"><time>10:30–11:30</time><div><strong>抵達花蓮車站</strong><br><span>以此為目標抵達區間。</span></div><div class="schedule-photos"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/108-10-hualien01.jpg" alt="花蓮車站入口" loading="lazy" /></div></li>
+              <li class="has-photo"><time>11:30–13:25</time><div><strong>DCC 洄瀾廣場午餐</strong><br><span>首選好正點港式點心；連假營業與座位待確認。</span></div><div class="schedule-photos"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/108-10-hualien01.jpg" alt="花蓮車站入口" loading="lazy" /></div></li>
+              <li class="has-photo"><time>13:30–15:00</time><div><strong>兩台計程車 → 麗翔酒店</strong><br><span>13:45 抵達、寄放行李並辦理入住前手續；15:00 正式入住。</span></div><div class="schedule-photos"><img src="https://pimg.1px.tw/jajama/1535869165-1228946664.jpg" alt="麗翔酒店連鎖花蓮館外觀與客房拼圖" loading="lazy" /></div></li>
+              <li class="has-photo"><time>15:00–16:10</time><div><strong>飯店休息／使用設施</strong><br><span>不加塞景點，保留抵達日緩衝。</span></div><div class="schedule-photos"><img src="https://pimg.1px.tw/jajama/1535869165-1228946664.jpg" alt="麗翔酒店連鎖花蓮館外觀與客房拼圖" loading="lazy" /></div></li>
+              <li class="has-photo"><time>16:20–17:50</time><div><strong>兩台計程車 → 七星潭</strong><br><span>16:35 起看海、等日落。</span></div><div class="schedule-photos"><img src="https://www.tsta-bj.com/att/pic/04000305/05000436.jpg" alt="花蓮七星潭的海景" loading="lazy" /></div></li>
+              <li class="has-photo"><time>18:00–20:10</time><div><strong>東大門夜市晚餐 → 步行回飯店</strong><br><span>18:20–20:00 用餐；夜市到麗翔酒店步行返程。</span></div><div class="schedule-photos"><img src="https://ws.hl.gov.tw/001/Upload/399/relpic/25832/169397/57ac2431-9f7d-43e2-a0cf-42744f632cf2.jpg" alt="花蓮東大門夜市的攤位與人潮" loading="lazy" /></div></li>
             </ol>
-            <h4 class="spot-title">今天會看到的地方</h4>
-            <div class="spot-grid">
-              <div class="spot-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/108-10-hualien01.jpg" alt="花蓮車站入口" loading="lazy" /><div><strong>花蓮車站／DCC</strong><span>抵達、午餐、兩台計程車出發</span></div></div>
-              <div class="spot-card"><img src="https://www.tsta-bj.com/att/pic/04000305/05000436.jpg" alt="花蓮七星潭的海景" loading="lazy" /><div><strong>七星潭</strong><span>看海、等日落</span></div></div>
-              <div class="spot-card"><img src="https://ws.hl.gov.tw/001/Upload/399/relpic/25832/169397/57ac2431-9f7d-43e2-a0cf-42744f632cf2.jpg" alt="花蓮東大門夜市的攤位與人潮" loading="lazy" /><div><strong>東大門夜市</strong><span>晚餐、飯後步行回飯店</span></div></div>
-              <div class="spot-card"><img src="https://pimg.1px.tw/jajama/1535869165-1228946664.jpg" alt="麗翔酒店連鎖花蓮館外觀與客房拼圖" loading="lazy" /><div><strong>麗翔酒店</strong><span>寄放行李、休息與住宿基地</span></div></div>
-            </div>
           </div>
         </article>
 
@@ -285,21 +278,14 @@
             <h4>今日時間軸</h4>
             <ol class="schedule">
               <li><time>08:30</time><div><strong>飯店出發，前往 iRent 取車</strong><br><span>取車站點依住宿附近可用站點調整。</span></div></li>
-              <li><time>09:10–10:40</time><div><strong>立川漁場</strong><br><span>摸蜆體驗視當天氣溫與天候決定。</span></div></li>
-              <li><time>10:45–12:15</time><div><strong>立川漁場午餐</strong></div></li>
-              <li><time>12:35–13:45</time><div><strong>雲山水植物農場</strong><br><span>欣賞落羽松與湖景。</span></div></li>
-              <li><time>14:15–16:20</time><div><strong>林田山林業文化園區</strong></div></li>
+              <li class="has-photo"><time>09:10–10:40</time><div><strong>立川漁場</strong><br><span>摸蜆體驗視當天氣溫與天候決定。</span></div><div class="schedule-photos"><img src="https://www.erv-nsa.gov.tw/image/11900/1024x768" alt="立川漁場的親水池塘" loading="lazy" /></div></li>
+              <li class="has-photo"><time>10:45–12:15</time><div><strong>立川漁場午餐</strong></div><div class="schedule-photos"><img src="https://www.erv-nsa.gov.tw/image/11900/1024x768" alt="立川漁場的親水池塘" loading="lazy" /></div></li>
+              <li class="has-photo"><time>12:35–13:45</time><div><strong>雲山水植物農場</strong><br><span>欣賞落羽松與湖景。</span></div><div class="schedule-photos"><img src="https://pic.pimg.tw/ajs0414/1641041842-928568757-g_l.jpg" alt="雲山水植物農場的夢幻湖與湖面倒影" loading="lazy" /></div></li>
+              <li class="has-photo"><time>14:15–16:20</time><div><strong>林田山林業文化園區</strong></div><div class="schedule-photos"><img src="https://hualien.forest.gov.tw/Attachments/ArticlePicture/10000221/Img/b6d02107db1e49f48bca034f9a21bfc6.jpeg" alt="林田山林業文化園區入口的木造建築" loading="lazy" /></div></li>
               <li><time>16:20–17:30</time><div><strong>返回吉安／花蓮市區</strong></div></li>
-              <li><time>17:30–19:30</time><div><strong>銘師父餐廳晚餐</strong><br><span>首選已定；連假週六需及早訂位並預訂烤鴨。</span></div></li>
+              <li class="has-photo"><time>17:30–19:30</time><div><strong>銘師父餐廳晚餐</strong><br><span>首選已定；連假週六需及早訂位並預訂烤鴨。</span></div><div class="schedule-photos"><img src="https://i.ytimg.com/vi/WGJseJ1s38o/hqdefault.jpg" alt="銘師父餐廳的在地料理示意照" loading="lazy" /></div></li>
               <li><time>19:30 後</time><div><strong>歸還 iRent，回飯店休息</strong></div></li>
             </ol>
-            <h4 class="spot-title">今天會看到的地方</h4>
-            <div class="spot-grid">
-              <div class="spot-card"><img src="https://www.erv-nsa.gov.tw/image/11900/1024x768" alt="立川漁場的親水池塘" loading="lazy" /><div><strong>立川漁場</strong><span>摸蜆體驗與午餐</span></div></div>
-              <div class="spot-card"><img src="https://pic.pimg.tw/ajs0414/1641041842-928568757-g_l.jpg" alt="雲山水植物農場的夢幻湖與湖面倒影" loading="lazy" /><div><strong>雲山水植物農場</strong><span>落羽松、湖景與散步</span></div></div>
-              <div class="spot-card"><img src="https://hualien.forest.gov.tw/Attachments/ArticlePicture/10000221/Img/b6d02107db1e49f48bca034f9a21bfc6.jpeg" alt="林田山林業文化園區入口的木造建築" loading="lazy" /><div><strong>林田山</strong><span>木造聚落與林業文化</span></div></div>
-              <div class="spot-card"><img src="https://i.ytimg.com/vi/WGJseJ1s38o/hqdefault.jpg" alt="銘師父餐廳的在地料理示意照" loading="lazy" /><div><strong>銘師父餐廳</strong><span>晚餐，烤鴨需提前預訂</span></div></div>
-            </div>
           </div>
         </article>
 
@@ -319,20 +305,13 @@
           <div class="timeline">
             <h4>今日時間軸</h4>
             <ol class="schedule">
-              <li><time>07:30–08:30</time><div><strong>麗翔飯店早餐</strong><br><span>實際供應時間入住時確認。</span></div></li>
+              <li class="has-photo"><time>07:30–08:30</time><div><strong>麗翔飯店早餐</strong><br><span>實際供應時間入住時確認。</span></div><div class="schedule-photos"><img src="https://pimg.1px.tw/jajama/1535869165-1228946664.jpg" alt="麗翔酒店連鎖花蓮館外觀與客房拼圖" loading="lazy" /></div></li>
               <li><time>08:30–09:20</time><div><strong>整理行李、休息、退房</strong><br><span>09:20 退房，行李寄放飯店櫃檯。</span></div></li>
-              <li><time>09:30–11:10</time><div><strong>步行景點彈性安排</strong><br><span>候選：10:00 開放、步行約 13–15 分鐘的將軍府1936；或步行約 2 分鐘的花蓮鐵道文化園區。若兩處都去，縮短停留時間。</span></div></li>
-              <li><time>11:10–11:45</time><div><strong>取行李，兩台計程車前往花蓮車站</strong><br><span>11:20 上車，目標 11:35–11:45 抵達。</span></div></li>
-              <li><time>11:45–12:30</time><div><strong>車站採買與候車</strong><br><span>購買午餐、飲料或伴手禮；12:30 前往月台。</span></div></li>
-              <li><time>12:49</time><div><strong>搭火車返回台北</strong></div></li>
+              <li class="has-photo"><time>09:30–11:10</time><div><strong>步行景點彈性安排</strong><br><span>候選：10:00 開放、步行約 13–15 分鐘的將軍府1936；或步行約 2 分鐘的花蓮鐵道文化園區。若兩處都去，縮短停留時間。</span></div><div class="schedule-photos"><img src="https://www.erv-nsa.gov.tw/image/76079/1920x1080" alt="花蓮將軍府1936的日式木造建築與庭院" loading="lazy" /><span>將軍府1936</span><img src="https://hlrcp.hccc.gov.tw/content/images/content/navigation-img-02.jpg" alt="花蓮鐵道文化園區的歷史建築與火車" loading="lazy" /><span>鐵道文化園區</span></div></li>
+              <li class="has-photo"><time>11:10–11:45</time><div><strong>取行李，兩台計程車前往花蓮車站</strong><br><span>11:20 上車，目標 11:35–11:45 抵達。</span></div><div class="schedule-photos"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/108-10-hualien01.jpg" alt="花蓮車站入口" loading="lazy" /></div></li>
+              <li class="has-photo"><time>11:45–12:30</time><div><strong>車站採買與候車</strong><br><span>購買午餐、飲料或伴手禮；12:30 前往月台。</span></div><div class="schedule-photos"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/108-10-hualien01.jpg" alt="花蓮車站入口" loading="lazy" /></div></li>
+              <li class="has-photo"><time>12:49</time><div><strong>搭火車返回台北</strong></div><div class="schedule-photos"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/108-10-hualien01.jpg" alt="花蓮車站入口" loading="lazy" /></div></li>
             </ol>
-            <h4 class="spot-title">今天會看到的地方</h4>
-            <div class="spot-grid">
-              <div class="spot-card"><img src="https://www.erv-nsa.gov.tw/image/76079/1920x1080" alt="花蓮將軍府1936的日式木造建築與庭院" loading="lazy" /><div><strong>將軍府1936</strong><span>步行約 13–15 分鐘</span></div></div>
-              <div class="spot-card"><img src="https://hlrcp.hccc.gov.tw/content/images/content/navigation-img-02.jpg" alt="花蓮鐵道文化園區的歷史建築與火車" loading="lazy" /><div><strong>花蓮鐵道文化園區</strong><span>步行約 2 分鐘</span></div></div>
-              <div class="spot-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/108-10-hualien01.jpg" alt="花蓮車站入口" loading="lazy" /><div><strong>花蓮車站</strong><span>採買、候車、12:49 回台北</span></div></div>
-              <div class="spot-card"><img src="https://www.tsta-bj.com/att/pic/04000305/05000436.jpg" alt="花蓮海岸景色" loading="lazy" /><div><strong>留白回程</strong><span>不排遠程景點，準時收尾</span></div></div>
-            </div>
           </div>
         </article>
       </div>
@@ -360,7 +339,7 @@
     </main>
 
     <footer class="wrap">
-      2026 花蓮三日遊 · 更新日：2026/09/12。<br />
+      2026 花蓮三日遊 · 更新日：2026/09/13。<br />
       訂位、車票與當日天候仍請以最新通知為準。
     </footer>
   </body>
