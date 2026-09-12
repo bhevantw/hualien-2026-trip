@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#123e57" />
+    <title>2026 花蓮三日遊｜家人行程頁</title>
+    <style>
+      :root {
+        --ink: #19313d;
+        --muted: #58707b;
+        --night: #123e57;
+        --sea: #1c7a8e;
+        --sky: #dff2f3;
+        --sun: #f3a64c;
+        --sand: #fffaf1;
+        --paper: #ffffff;
+        --line: #d8e3e2;
+        --leaf: #557b53;
+        --shadow: 0 16px 36px rgba(18, 62, 87, 0.1);
+      }
+
+      * { box-sizing: border-box; }
+
+      html { scroll-behavior: smooth; }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: linear-gradient(180deg, #eaf6f6 0, #f8fbf9 42%, #fffaf1 100%);
+        font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+      }
+
+      a { color: inherit; }
+
+      .wrap {
+        width: min(1100px, calc(100vw - 28px));
+        margin: 0 auto;
+      }
+
+      .hero {
+        min-height: 356px;
+        position: relative;
+        display: grid;
+        align-items: end;
+        overflow: hidden;
+        color: white;
+        background: var(--night);
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(90deg, rgba(7, 34, 48, 0.93) 3%, rgba(7, 34, 48, 0.7) 48%, rgba(7, 34, 48, 0.28)),
+          url("https://www.tsta-bj.com/att/pic/04000305/05000436.jpg") center / cover;
+      }
+
+      .hero .wrap {
+        position: relative;
+        padding: 58px 0 34px;
+      }
+
+      .eyebrow, .badge, .chip {
+        display: inline-flex;
+        align-items: center;
+        width: fit-content;
+        border-radius: 999px;
+        font-weight: 750;
+        letter-spacing: 0.02em;
+      }
+
+      .eyebrow {
+        padding: 7px 12px;
+        background: rgba(212, 244, 245, 0.18);
+        border: 1px solid rgba(255, 255, 255, 0.34);
+        font-size: 0.84rem;
+      }
+
+      h1, h2, h3, p { margin: 0; }
+
+      h1 {
+        margin-top: 14px;
+        font-size: clamp(2.25rem, 6vw, 4.5rem);
+        line-height: 1.04;
+        letter-spacing: 0.015em;
+      }
+
+      .hero-lead {
+        max-width: 48rem;
+        margin-top: 16px;
+        color: rgba(255, 255, 255, 0.91);
+        font-size: clamp(1rem, 2.4vw, 1.18rem);
+        line-height: 1.7;
+      }
+
+      .facts {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 11px;
+        margin-top: 26px;
+      }
+
+      .fact {
+        padding: 13px 14px;
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        background: rgba(9, 43, 59, 0.55);
+        backdrop-filter: blur(7px);
+        border-radius: 12px;
+      }
+
+      .fact span { display: block; color: #cce8e9; font-size: 0.78rem; }
+      .fact strong { display: block; margin-top: 4px; font-size: 0.96rem; line-height: 1.45; }
+
+      nav {
+        position: sticky;
+        z-index: 3;
+        top: 0;
+        border-bottom: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(12px);
+      }
+
+      nav .wrap { display: flex; gap: 8px; padding: 10px 0; overflow-x: auto; }
+      nav a { flex: 0 0 auto; text-decoration: none; padding: 8px 11px; border-radius: 8px; color: var(--muted); font-size: 0.9rem; font-weight: 750; }
+      nav a:hover, nav a:focus-visible { background: var(--sky); color: var(--night); outline: none; }
+
+      main { padding: 30px 0 52px; }
+      .intro { display: flex; justify-content: space-between; gap: 18px; align-items: end; margin-bottom: 17px; }
+      h2 { font-size: clamp(1.45rem, 3.5vw, 2rem); line-height: 1.25; }
+      .muted { color: var(--muted); line-height: 1.7; }
+
+      .days { display: grid; gap: 22px; }
+      .day {
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: var(--paper);
+        box-shadow: var(--shadow);
+      }
+
+      .day-top { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.9fr); min-height: 240px; }
+      .day-copy { padding: 26px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; }
+      .day-number { color: var(--sea); font-size: 0.9rem; font-weight: 800; }
+      .day h3 { margin-top: 6px; font-size: clamp(1.42rem, 3vw, 2rem); line-height: 1.25; }
+      .day-summary { margin-top: 10px; color: var(--muted); font-size: 1rem; line-height: 1.7; }
+      .badge { margin-top: 15px; padding: 6px 10px; background: #e8f5f1; color: #31654d; font-size: 0.78rem; }
+      .badge.draft { background: #fff0dc; color: #8a571a; }
+
+      figure { position: relative; min-height: 240px; margin: 0; overflow: hidden; background: #d2e4e5; }
+      figure img { width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; }
+      figcaption { position: absolute; right: 12px; bottom: 10px; padding: 5px 8px; border-radius: 6px; background: rgba(10, 31, 40, 0.68); color: white; font-size: 0.75rem; }
+      figcaption a { color: white; }
+
+      .timeline { padding: 10px 26px 24px; }
+      .timeline h4 { margin: 0 0 10px; color: var(--night); font-size: 0.96rem; }
+      .schedule { list-style: none; display: grid; gap: 0; margin: 0; padding: 0; }
+      .schedule li { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 14px; padding: 13px 0; border-top: 1px solid #eaf0ef; line-height: 1.6; }
+      .schedule time { color: var(--sea); font-weight: 800; font-variant-numeric: tabular-nums; }
+      .schedule strong { color: var(--ink); }
+      .schedule span { color: var(--muted); }
+
+      .spot-title { margin: 20px 0 10px; color: var(--night); font-size: 0.96rem; }
+      .spot-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+      .spot-card { min-width: 0; overflow: hidden; border: 1px solid #dfebea; border-radius: 12px; background: #f8fbfa; }
+      .spot-card img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: #dce9e9; }
+      .spot-card div { padding: 9px 10px 10px; }
+      .spot-card strong { display: block; color: var(--night); font-size: 0.9rem; line-height: 1.4; }
+      .spot-card span { display: block; margin-top: 2px; color: var(--muted); font-size: 0.76rem; line-height: 1.45; }
+
+      .notes-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 18px; margin-top: 26px; }
+      .panel { border: 1px solid var(--line); border-radius: 18px; padding: 22px; background: rgba(255,255,255,0.88); box-shadow: 0 10px 25px rgba(20, 60, 72, 0.05); }
+      .panel h3 { font-size: 1.18rem; }
+      .checks { display: grid; gap: 10px; margin: 14px 0 0; padding: 0; list-style: none; }
+      .checks li { padding: 11px 12px; border-left: 4px solid var(--sun); border-radius: 0 9px 9px 0; background: #fff8ed; line-height: 1.6; }
+      .checks li strong { color: #80531a; }
+      .flow { display: grid; gap: 12px; margin-top: 14px; }
+      .flow-step { padding: 12px; border-radius: 12px; background: #eef7f7; }
+      .flow-step strong { display: block; color: var(--night); }
+      .flow-step span { display: block; margin-top: 3px; color: var(--muted); font-size: 0.92rem; line-height: 1.55; }
+
+      footer { padding: 22px 0 38px; color: var(--muted); font-size: 0.86rem; line-height: 1.7; text-align: center; }
+      footer a { color: var(--sea); }
+
+      @media (max-width: 760px) {
+        .wrap { width: min(100% - 20px, 620px); }
+        .hero { min-height: 440px; }
+        .hero::before { background: linear-gradient(180deg, rgba(7, 34, 48, 0.58), rgba(7, 34, 48, 0.94)), url("https://www.tsta-bj.com/att/pic/04000305/05000436.jpg") center / cover; }
+        .hero .wrap { padding: 36px 0 22px; }
+        .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .day-top, .notes-grid { grid-template-columns: 1fr; }
+        figure { min-height: 215px; grid-row: 1; }
+        .day-copy { padding: 22px; }
+        .timeline { padding: 7px 20px 20px; }
+        .schedule li { grid-template-columns: 82px minmax(0, 1fr); gap: 9px; }
+        .spot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .intro { display: block; }
+        .intro .muted { margin-top: 7px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="wrap">
+        <span class="eyebrow">家人手機行程頁 · 目前版本為暫定安排</span>
+        <h1>2026 花蓮三日遊</h1>
+        <p class="hero-lead">用一個抵達日、一個縱谷日、和一個市區慢走返程日，把聖誕週末留給花蓮的海、山與老街景。</p>
+        <div class="facts" aria-label="行程基本資訊">
+          <div class="fact"><span>日期</span><strong>12/25（五）– 12/27（日）</strong></div>
+          <div class="fact"><span>同行人數</span><strong>預計 6–7 人</strong></div>
+          <div class="fact"><span>住宿</span><strong>麗翔酒店連鎖花蓮館</strong></div>
+          <div class="fact"><span>返程火車</span><strong>12/27 12:49</strong></div>
+        </div>
+      </div>
+    </header>
+
+    <nav aria-label="行程導覽">
+      <div class="wrap">
+        <a href="#day1">Day 1 抵達與看海</a>
+        <a href="#day2">Day 2 縱谷慢遊</a>
+        <a href="#day3">Day 3 市區返程</a>
+        <a href="#prepare">確認清單</a>
+      </div>
+    </nav>
+
+    <main class="wrap">
+      <section class="intro" aria-labelledby="schedule-title">
+        <div>
+          <h2 id="schedule-title">一眼看懂這三天</h2>
+          <p class="muted">需要訂位或當天依天候調整的項目，都保留在頁面上提醒大家。</p>
+        </div>
+        <p class="muted">台北 ⇄ 花蓮 · 第一天不租車</p>
+      </section>
+
+      <div class="days">
+        <article class="day" id="day1">
+          <div class="day-top">
+            <div class="day-copy">
+              <span class="day-number">DAY 1 · 12/25（五）</span>
+              <h3>抵達花蓮，把傍晚留給海</h3>
+              <p class="day-summary">先在車站吃午餐、到飯店放下行李，傍晚以七星潭日落和東大門夜市開場；不在第一天租車，讓移動更輕鬆。</p>
+              <span class="badge draft">火車與午餐座位仍待確認</span>
+            </div>
+            <figure>
+              <img src="https://www.tsta-bj.com/att/pic/04000305/05000436.jpg" alt="花蓮七星潭傍晚的海岸步道與海景" />
+              <figcaption>七星潭 · <a href="https://www.tsta-bj.com/Article.aspx?sNo=04000305" target="_blank" rel="noreferrer">圖片來源</a></figcaption>
+            </figure>
+          </div>
+          <div class="timeline">
+            <h4>今日時間軸</h4>
+            <ol class="schedule">
+              <li><time>08:00–09:00</time><div><strong>台北出發</strong><br><span>目標搭直達花蓮的自強號；實際車次等台鐵開放訂票後確認。</span></div></li>
+              <li><time>10:30–11:30</time><div><strong>抵達花蓮車站</strong><br><span>以此為目標抵達區間。</span></div></li>
+              <li><time>11:30–13:25</time><div><strong>DCC 洄瀾廣場午餐</strong><br><span>首選好正點港式點心；連假營業與座位待確認。</span></div></li>
+              <li><time>13:30–15:00</time><div><strong>兩台計程車 → 麗翔酒店</strong><br><span>13:45 抵達、寄放行李並辦理入住前手續；15:00 正式入住。</span></div></li>
+              <li><time>15:00–16:10</time><div><strong>飯店休息／使用設施</strong><br><span>不加塞景點，保留抵達日緩衝。</span></div></li>
+              <li><time>16:20–17:50</time><div><strong>兩台計程車 → 七星潭</strong><br><span>16:35 起看海、等日落。</span></div></li>
+              <li><time>18:00–20:10</time><div><strong>東大門夜市晚餐 → 步行回飯店</strong><br><span>18:20–20:00 用餐；夜市到麗翔酒店步行返程。</span></div></li>
+            </ol>
+            <h4 class="spot-title">今天會看到的地方</h4>
+            <div class="spot-grid">
+              <div class="spot-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/108-10-hualien01.jpg" alt="花蓮車站入口" loading="lazy" /><div><strong>花蓮車站／DCC</strong><span>抵達、午餐、兩台計程車出發</span></div></div>
+              <div class="spot-card"><img src="https://www.tsta-bj.com/att/pic/04000305/05000436.jpg" alt="花蓮七星潭的海景" loading="lazy" /><div><strong>七星潭</strong><span>看海、等日落</span></div></div>
+              <div class="spot-card"><img src="https://ws.hl.gov.tw/001/Upload/399/relpic/25832/169397/57ac2431-9f7d-43e2-a0cf-42744f632cf2.jpg" alt="花蓮東大門夜市的攤位與人潮" loading="lazy" /><div><strong>東大門夜市</strong><span>晚餐、飯後步行回飯店</span></div></div>
+              <div class="spot-card"><img src="https://pimg.1px.tw/jajama/1535869165-1228946664.jpg" alt="麗翔酒店連鎖花蓮館外觀與客房拼圖" loading="lazy" /><div><strong>麗翔酒店</strong><span>寄放行李、休息與住宿基地</span></div></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="day" id="day2">
+          <div class="day-top">
+            <div class="day-copy">
+              <span class="day-number">DAY 2 · 12/26（六）</span>
+              <h3>縱谷一日：摸蜆、湖景、林業記憶</h3>
+              <p class="day-summary">唯一完整的開車日。上午從立川漁場開始，再看雲山水湖景與林田山；晚餐是已選定的銘師父餐廳。</p>
+              <span class="badge draft">iRent 取車點與車輛數待確認</span>
+            </div>
+            <figure>
+              <img src="https://www.erv-nsa.gov.tw/image/11900/1024x768" alt="花蓮立川漁場的池塘與親水景觀" loading="lazy" />
+              <figcaption>立川漁場 · <a href="https://www.erv-nsa.gov.tw/zh-tw/attractions/detail/156" target="_blank" rel="noreferrer">圖片來源</a></figcaption>
+            </figure>
+          </div>
+          <div class="timeline">
+            <h4>今日時間軸</h4>
+            <ol class="schedule">
+              <li><time>08:30</time><div><strong>飯店出發，前往 iRent 取車</strong><br><span>取車站點依住宿附近可用站點調整。</span></div></li>
+              <li><time>09:10–10:40</time><div><strong>立川漁場</strong><br><span>摸蜆體驗視當天氣溫與天候決定。</span></div></li>
+              <li><time>10:45–12:15</time><div><strong>立川漁場午餐</strong></div></li>
+              <li><time>12:35–13:45</time><div><strong>雲山水植物農場</strong><br><span>欣賞落羽松與湖景。</span></div></li>
+              <li><time>14:15–16:20</time><div><strong>林田山林業文化園區</strong></div></li>
+              <li><time>16:20–17:30</time><div><strong>返回吉安／花蓮市區</strong></div></li>
+              <li><time>17:30–19:30</time><div><strong>銘師父餐廳晚餐</strong><br><span>首選已定；連假週六需及早訂位並預訂烤鴨。</span></div></li>
+              <li><time>19:30 後</time><div><strong>歸還 iRent，回飯店休息</strong></div></li>
+            </ol>
+            <h4 class="spot-title">今天會看到的地方</h4>
+            <div class="spot-grid">
+              <div class="spot-card"><img src="https://www.erv-nsa.gov.tw/image/11900/1024x768" alt="立川漁場的親水池塘" loading="lazy" /><div><strong>立川漁場</strong><span>摸蜆體驗與午餐</span></div></div>
+              <div class="spot-card"><img src="https://pic.pimg.tw/ajs0414/1641041842-928568757-g_l.jpg" alt="雲山水植物農場的夢幻湖與湖面倒影" loading="lazy" /><div><strong>雲山水植物農場</strong><span>落羽松、湖景與散步</span></div></div>
+              <div class="spot-card"><img src="https://hualien.forest.gov.tw/Attachments/ArticlePicture/10000221/Img/b6d02107db1e49f48bca034f9a21bfc6.jpeg" alt="林田山林業文化園區入口的木造建築" loading="lazy" /><div><strong>林田山</strong><span>木造聚落與林業文化</span></div></div>
+              <div class="spot-card"><img src="https://i.ytimg.com/vi/WGJseJ1s38o/hqdefault.jpg" alt="銘師父餐廳的在地料理示意照" loading="lazy" /><div><strong>銘師父餐廳</strong><span>晚餐，烤鴨需提前預訂</span></div></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="day" id="day3">
+          <div class="day-top">
+            <div class="day-copy">
+              <span class="day-number">DAY 3 · 12/27（日）</span>
+              <h3>市區慢走，留足回程餘裕</h3>
+              <p class="day-summary">退房後只選一處或短停兩處市區景點；行李留在飯店，預留充足時間回車站搭 12:49 火車。</p>
+              <span class="badge">依天氣與長輩體力彈性選點</span>
+            </div>
+            <figure>
+              <img src="https://www.erv-nsa.gov.tw/image/76079/1920x1080" alt="花蓮將軍府1936的日式歷史建築與庭院" loading="lazy" />
+              <figcaption>將軍府1936 · <a href="https://www.erv-nsa.gov.tw/zh-tw/attractions/detail/282" target="_blank" rel="noreferrer">圖片來源</a></figcaption>
+            </figure>
+          </div>
+          <div class="timeline">
+            <h4>今日時間軸</h4>
+            <ol class="schedule">
+              <li><time>07:30–08:30</time><div><strong>麗翔飯店早餐</strong><br><span>實際供應時間入住時確認。</span></div></li>
+              <li><time>08:30–09:20</time><div><strong>整理行李、休息、退房</strong><br><span>09:20 退房，行李寄放飯店櫃檯。</span></div></li>
+              <li><time>09:30–11:10</time><div><strong>步行景點彈性安排</strong><br><span>候選：10:00 開放、步行約 13–15 分鐘的將軍府1936；或步行約 2 分鐘的花蓮鐵道文化園區。若兩處都去，縮短停留時間。</span></div></li>
+              <li><time>11:10–11:45</time><div><strong>取行李，兩台計程車前往花蓮車站</strong><br><span>11:20 上車，目標 11:35–11:45 抵達。</span></div></li>
+              <li><time>11:45–12:30</time><div><strong>車站採買與候車</strong><br><span>購買午餐、飲料或伴手禮；12:30 前往月台。</span></div></li>
+              <li><time>12:49</time><div><strong>搭火車返回台北</strong></div></li>
+            </ol>
+            <h4 class="spot-title">今天會看到的地方</h4>
+            <div class="spot-grid">
+              <div class="spot-card"><img src="https://www.erv-nsa.gov.tw/image/76079/1920x1080" alt="花蓮將軍府1936的日式木造建築與庭院" loading="lazy" /><div><strong>將軍府1936</strong><span>步行約 13–15 分鐘</span></div></div>
+              <div class="spot-card"><img src="https://hlrcp.hccc.gov.tw/content/images/content/navigation-img-02.jpg" alt="花蓮鐵道文化園區的歷史建築與火車" loading="lazy" /><div><strong>花蓮鐵道文化園區</strong><span>步行約 2 分鐘</span></div></div>
+              <div class="spot-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/108-10-hualien01.jpg" alt="花蓮車站入口" loading="lazy" /><div><strong>花蓮車站</strong><span>採買、候車、12:49 回台北</span></div></div>
+              <div class="spot-card"><img src="https://www.tsta-bj.com/att/pic/04000305/05000436.jpg" alt="花蓮海岸景色" loading="lazy" /><div><strong>留白回程</strong><span>不排遠程景點，準時收尾</span></div></div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <section class="notes-grid" id="prepare" aria-label="出發前確認事項">
+        <article class="panel">
+          <h3>出發前需要確認</h3>
+          <ul class="checks">
+            <li><strong>火車：</strong>12/25 去程的直達自強號，以及 12/27 12:49 回程車票。</li>
+            <li><strong>第一天：</strong>DCC 洄瀾廣場好正點的連假營業時間與 6–7 人座位。</li>
+            <li><strong>第二天交通：</strong>麗翔附近的 iRent 取還車站點，以及一台或兩台車是否足夠。</li>
+            <li><strong>銘師父：</strong>連假週六盡早訂位，並一併預訂烤鴨；預計 6–7 人，電話 03-858-1122。</li>
+            <li><strong>送站：</strong>入住時或前一晚請麗翔櫃檯協助預約兩台計程車，避免連假臨時叫不到車。</li>
+          </ul>
+        </article>
+        <article class="panel">
+          <h3>三天的旅行節奏</h3>
+          <div class="flow">
+            <div class="flow-step"><strong>Day 1｜抵達 + 海邊夜市</strong><span>車站午餐、飯店休息、七星潭、東大門。</span></div>
+            <div class="flow-step"><strong>Day 2｜縱谷 + 體驗</strong><span>iRent 一日往返，將戶外景點集中處理。</span></div>
+            <div class="flow-step"><strong>Day 3｜步行 + 回程</strong><span>不排遠程景點，讓行李與火車時間有餘裕。</span></div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="wrap">
+      2026 花蓮三日遊 · 更新日：2026/09/12。<br />
+      訂位、車票與當日天候仍請以最新通知為準。
+    </footer>
+  </body>
+</html>
