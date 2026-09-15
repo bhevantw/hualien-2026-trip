@@ -131,6 +131,18 @@
       h2 { font-size: clamp(1.45rem, 3.5vw, 2rem); line-height: 1.25; }
       .muted { color: var(--muted); line-height: 1.7; }
 
+      .update-strip { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 13px; align-items: start; margin: 0 0 22px; padding: 15px 17px; border: 1px solid #c9e3e2; border-radius: 14px; background: #f0f9f8; }
+      .update-strip strong { color: var(--night); }
+      .update-strip p { color: var(--muted); font-size: 0.93rem; line-height: 1.65; }
+      .update-mark { padding: 5px 9px; border-radius: 999px; background: var(--night); color: white; font-size: 0.76rem; font-weight: 800; white-space: nowrap; }
+
+      .overview { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin: 0 0 22px; }
+      .overview a { display: flex; flex-direction: column; min-height: 158px; padding: 18px; border: 1px solid var(--line); border-radius: 16px; background: rgba(255,255,255,0.9); box-shadow: 0 8px 22px rgba(20, 60, 72, 0.05); text-decoration: none; }
+      .overview a:hover, .overview a:focus-visible { border-color: var(--sea); box-shadow: 0 12px 25px rgba(20, 92, 108, 0.14); outline: none; transform: translateY(-2px); }
+      .overview .day-number { font-size: 0.77rem; }
+      .overview strong { margin-top: 6px; color: var(--night); font-size: 1.06rem; line-height: 1.45; }
+      .overview span:last-child { margin-top: auto; padding-top: 11px; color: var(--muted); font-size: 0.88rem; line-height: 1.55; }
+
       .days { display: grid; gap: 22px; }
       .day {
         overflow: hidden;
@@ -155,6 +167,10 @@
 
       .timeline { padding: 10px 26px 24px; }
       .timeline h4 { margin: 0 0 10px; color: var(--night); font-size: 0.96rem; }
+      .day-guide { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 5px; }
+      .guide { padding: 6px 9px; border-radius: 8px; background: #edf7f7; color: #285566; font-size: 0.8rem; font-weight: 700; line-height: 1.45; }
+      .guide.fixed { background: #e9f5ef; color: #31654d; }
+      .guide.flexible { background: #fff3e3; color: #87591b; }
       .schedule { list-style: none; display: grid; gap: 0; margin: 0; padding: 0; }
       .schedule li { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 14px; padding: 13px 0; border-top: 1px solid #eaf0ef; line-height: 1.6; }
       .schedule time { color: var(--sea); font-weight: 800; font-variant-numeric: tabular-nums; }
@@ -176,6 +192,9 @@
       .flow-step { padding: 12px; border-radius: 12px; background: #eef7f7; }
       .flow-step strong { display: block; color: var(--night); }
       .flow-step span { display: block; margin-top: 3px; color: var(--muted); font-size: 0.92rem; line-height: 1.55; }
+      .backup-title { margin-top: 21px !important; }
+      .backup { margin-top: 10px; padding: 13px; border-radius: 12px; background: #f8f4ec; color: #5d5141; font-size: 0.92rem; line-height: 1.65; }
+      .backup strong { color: #795721; }
 
       footer { padding: 22px 0 38px; color: var(--muted); font-size: 0.86rem; line-height: 1.7; text-align: center; }
       footer a { color: var(--sea); }
@@ -187,6 +206,9 @@
         .hero .wrap { padding: 36px 0 22px; }
         .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         .day-top, .notes-grid { grid-template-columns: 1fr; }
+        .overview { grid-template-columns: 1fr; }
+        .overview a { min-height: 0; }
+        .update-strip { grid-template-columns: 1fr; gap: 8px; }
         figure { min-height: 215px; grid-row: 1; }
         .day-copy { padding: 22px; }
         .timeline { padding: 7px 20px 20px; }
@@ -233,6 +255,17 @@
         <p class="muted">台北 ⇄ 花蓮 · 第一天不租車</p>
       </section>
 
+      <aside class="update-strip" aria-label="本頁更新提示">
+        <span class="update-mark">暫定安排</span>
+        <p><strong>更新於 2026/09/16</strong> · 本次補上三日總覽、固定／可調整分類與備案提示。車票、訂位、iRent 與天候仍請以最新通知為準。</p>
+      </aside>
+
+      <section class="overview" aria-label="三日行程總覽">
+        <a href="#day1"><span class="day-number">DAY 1 · 12/25（五）</span><strong>抵達、看海、夜市</strong><span>火車進花蓮，留足休息時間，再去七星潭等日落。</span></a>
+        <a href="#day2"><span class="day-number">DAY 2 · 12/26（六）</span><strong>縱谷體驗日</strong><span>唯一開車日；立川、雲山水、林田山集中安排。</span></a>
+        <a href="#day3"><span class="day-number">DAY 3 · 12/27（日）</span><strong>市區慢走、準時回程</strong><span>上午彈性選點，12:49 火車是全天要保留的固定時段。</span></a>
+      </section>
+
       <div class="days">
         <article class="day" id="day1">
           <div class="day-top">
@@ -249,6 +282,7 @@
           </div>
           <div class="timeline">
             <h4>今日時間軸</h4>
+            <div class="day-guide" aria-label="Day 1 行程狀態"><span class="guide flexible">可調整：去程車次與午餐座位</span><span class="guide">交通：當日以計程車與步行為主</span><span class="guide flexible">備案：若天候不佳，縮短七星潭、提早回飯店或夜市</span></div>
             <ol class="schedule">
               <li><time>08:00–09:00</time><div><strong>台北出發</strong><br><span>目標搭直達花蓮的自強號；實際車次等台鐵開放訂票後確認。</span></div></li>
               <li class="has-photo"><time>10:30–11:30</time><div><strong>抵達花蓮車站</strong><br><span>以此為目標抵達區間。</span></div><div class="schedule-photos"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/108-10-hualien01.jpg" alt="花蓮車站入口" loading="lazy" /></div></li>
@@ -276,6 +310,7 @@
           </div>
           <div class="timeline">
             <h4>今日時間軸</h4>
+            <div class="day-guide" aria-label="Day 2 行程狀態"><span class="guide flexible">可調整：iRent 取還站點與車輛數</span><span class="guide fixed">已選定：銘師父晚餐</span><span class="guide flexible">備案：下雨或疲累時，縮短戶外停留、保留晚餐時段</span></div>
             <ol class="schedule">
               <li><time>08:30</time><div><strong>飯店出發，前往 iRent 取車</strong><br><span>取車站點依住宿附近可用站點調整。</span></div></li>
               <li class="has-photo"><time>09:10–10:40</time><div><strong>立川漁場</strong><br><span>摸蜆體驗視當天氣溫與天候決定。</span></div><div class="schedule-photos"><img src="https://www.erv-nsa.gov.tw/image/11900/1024x768" alt="立川漁場的親水池塘" loading="lazy" /></div></li>
@@ -304,6 +339,7 @@
           </div>
           <div class="timeline">
             <h4>今日時間軸</h4>
+            <div class="day-guide" aria-label="Day 3 行程狀態"><span class="guide fixed">固定：12:49 回程火車</span><span class="guide flexible">可調整：將軍府或鐵道文化園區擇一</span><span class="guide">提醒：行李寄放飯店，11:20 目標上車去車站</span></div>
             <ol class="schedule">
               <li class="has-photo"><time>07:30–08:30</time><div><strong>麗翔飯店早餐</strong><br><span>實際供應時間入住時確認。</span></div><div class="schedule-photos"><img src="https://pimg.1px.tw/jajama/1535869165-1228946664.jpg" alt="麗翔酒店連鎖花蓮館外觀與客房拼圖" loading="lazy" /></div></li>
               <li><time>08:30–09:20</time><div><strong>整理行李、休息、退房</strong><br><span>09:20 退房，行李寄放飯店櫃檯。</span></div></li>
@@ -334,12 +370,14 @@
             <div class="flow-step"><strong>Day 2｜縱谷 + 體驗</strong><span>iRent 一日往返，將戶外景點集中處理。</span></div>
             <div class="flow-step"><strong>Day 3｜步行 + 回程</strong><span>不排遠程景點，讓行李與火車時間有餘裕。</span></div>
           </div>
+          <h3 class="backup-title">遇到變動怎麼看</h3>
+          <p class="backup"><strong>固定時段先保留：</strong>回程火車與已選定晚餐優先不動；其餘景點以天候、體力與實際交通為準。此頁更新後，請直接查看上方的更新日期與各日提示。</p>
         </article>
       </section>
     </main>
 
     <footer class="wrap">
-      2026 花蓮三日遊 · 更新日：2026/09/13。<br />
+      2026 花蓮三日遊 · 更新日：2026/09/16。<br />
       訂位、車票與當日天候仍請以最新通知為準。
     </footer>
   </body>
