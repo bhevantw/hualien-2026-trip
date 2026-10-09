@@ -4,17 +4,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#123e57" />
-    <meta name="description" content="2026 花蓮三日遊：一起走老屋、進縱谷、慢慢逛市區的家人行程。" />
+    <meta name="description" content="2026 花蓮三日遊：看海、吃和平路臭豆腐、走進縱谷，再到將軍府慢慢逛。" />
     <meta property="og:locale" content="zh_TW" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="2026 花蓮三日遊" />
-    <meta property="og:description" content="一起走老屋、進縱谷、慢慢逛市區的家人行程。" />
+    <meta property="og:description" content="看海、吃和平路臭豆腐、走進縱谷，再到將軍府慢慢逛。" />
     <meta property="og:url" content="https://bhevantw.github.io/hualien-2026-trip/hualien-2026-itinerary.html" />
     <meta property="og:image" content="https://bhevantw.github.io/hualien-2026-trip/assets/jiangjunfu-1936-cc-by-sa.jpg" />
     <meta property="og:image:alt" content="花蓮將軍府1936的日式木造建築" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="2026 花蓮三日遊" />
-    <meta name="twitter:description" content="一起走老屋、進縱谷、慢慢逛市區的家人行程。" />
+    <meta name="twitter:description" content="看海、吃和平路臭豆腐、走進縱谷，再到將軍府慢慢逛。" />
     <meta name="twitter:image" content="https://bhevantw.github.io/hualien-2026-trip/assets/jiangjunfu-1936-cc-by-sa.jpg" />
     <title>2026 花蓮三日遊｜家人行程頁</title>
     <style>
@@ -66,7 +66,7 @@
         inset: 0;
         background:
           linear-gradient(90deg, rgba(7, 34, 48, 0.93) 3%, rgba(7, 34, 48, 0.7) 48%, rgba(7, 34, 48, 0.28)),
-          url("assets/jiangjunfu-1936-cc-by-sa.jpg") center / cover;
+          url("https://tour-hualien-ws.hl.gov.tw/001/Upload/435/relpic/12302/1241/bbd2da8c-341c-4e99-a244-de36b6974e35@710x470.jpg") center / cover;
       }
 
       .hero .wrap {
@@ -187,11 +187,15 @@
       .schedule span { color: var(--muted); }
       .map-link { display: inline-block; margin-left: 7px; color: var(--sea); font-size: 0.86rem; font-weight: 750; white-space: nowrap; }
 
-      .schedule li.has-photo { grid-template-columns: 112px minmax(0, 1fr) 190px; align-items: start; }
+      .schedule li.has-photo { grid-template-columns: 112px minmax(0, 1fr) 280px; align-items: start; }
       .schedule-photos { grid-column: 3; display: grid; gap: 7px; min-width: 0; }
       .schedule-photos img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 10px; background: #dce9e9; }
       .schedule-photos span { font-size: 0.78rem; text-align: center; }
       .schedule-photos .photo-credit { color: var(--muted); font-size: 0.7rem; line-height: 1.35; text-align: left; }
+      .schedule-photos.gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 5px; }
+      .schedule-photos.gallery .photo-tile { min-width: 0; }
+      .schedule-photos.gallery img { aspect-ratio: 1 / 1; border-radius: 7px; }
+      .schedule-photos.gallery .photo-credit { display: block; margin-top: 3px; font-size: 0.61rem; line-height: 1.2; overflow-wrap: anywhere; }
       .photo-credit a { color: inherit; }
 
       .notes-grid { margin-top: 26px; }
@@ -207,7 +211,7 @@
       @media (max-width: 760px) {
         .wrap { width: min(100% - 20px, 620px); }
         .hero { min-height: 440px; }
-        .hero::before { background: linear-gradient(180deg, rgba(7, 34, 48, 0.58), rgba(7, 34, 48, 0.94)), url("assets/jiangjunfu-1936-cc-by-sa.jpg") center / cover; }
+        .hero::before { background: linear-gradient(180deg, rgba(7, 34, 48, 0.58), rgba(7, 34, 48, 0.94)), url("https://tour-hualien-ws.hl.gov.tw/001/Upload/435/relpic/12302/1241/bbd2da8c-341c-4e99-a244-de36b6974e35@710x470.jpg") center / cover; }
         .hero .wrap { padding: 36px 0 22px; }
         .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         .day-top { grid-template-columns: 1fr; }
@@ -217,10 +221,11 @@
         .day-copy { padding: 22px; }
         .timeline { padding: 7px 20px 20px; }
         .schedule li { grid-template-columns: minmax(0, 1fr); gap: 4px 12px; }
-        .schedule li.has-photo { grid-template-columns: minmax(0, 1fr) clamp(88px, 25vw, 132px); }
+        .schedule li.has-photo { grid-template-columns: minmax(0, 1fr); }
         .schedule li > time, .schedule li > div:not(.schedule-photos) { grid-column: 1; }
-        .schedule li > .schedule-photos { grid-column: 2; grid-row: 1 / span 2; }
+        .schedule li > .schedule-photos { grid-column: 1; grid-row: auto; width: min(100%, 420px); margin-top: 7px; }
         .schedule-photos img { aspect-ratio: 1 / 1; }
+        .schedule-photos.gallery .photo-credit { font-size: 0.68rem; }
         .intro { display: block; }
         .intro .muted { margin-top: 7px; }
       }
@@ -247,7 +252,7 @@
       <div class="wrap">
         <span class="eyebrow">家人手機行程頁 · 三天慢慢玩花蓮</span>
         <h1>2026 花蓮三日遊</h1>
-        <p class="hero-lead">用一個抵達日、一個縱谷日、和一個市區慢走返程日，把聖誕週末留給花蓮的老屋、山景與街區。</p>
+        <p class="hero-lead">第一天吹海風、嚐一口熱騰騰的臭豆腐；第二天往縱谷走，最後一天再慢慢逛將軍府。三天都留點空白，花蓮才玩得從容。</p>
         <div class="facts" aria-label="行程基本資訊">
           <div class="fact"><span>日期</span><strong>12/25（五）– 12/27（日）</strong></div>
           <div class="fact"><span>同行人數</span><strong>預計 8 人</strong></div>
@@ -270,7 +275,7 @@
       <section class="intro" aria-labelledby="schedule-title">
         <div>
           <h2 id="schedule-title">這三天，我們一起去走走</h2>
-          <p class="muted">走進老屋、逛逛縱谷，再一起吃頓好吃的。來看看每天要去哪裡，挑一站你最期待的！</p>
+          <p class="muted">從海邊小吃到縱谷風景，再以將軍府的老建築收尾。來看看每天去哪裡，挑一站你最期待的！</p>
         </div>
         <p class="muted">台北 ⇄ 花蓮 · 第一天不租車</p>
       </section>
@@ -278,9 +283,9 @@
       <p class="meeting"><strong>集合怎麼約？</strong>預計從台北搭火車出發；去程車次、集合車站與時間，等車票確認後再通知大家。</p>
 
       <section class="overview" aria-label="三日行程總覽">
-        <a href="#day1"><span class="day-number">DAY 1 · 12/25（五）</span><strong>抵達、老屋、夜市</strong><span>火車進花蓮，入住後輕鬆逛將軍府，再到東大門吃晚餐。</span></a>
-        <a href="#day2"><span class="day-number">DAY 2 · 12/26（六）</span><strong>縱谷體驗日</strong><span>唯一開車日；立川、小和山谷、雲山水與林田山集中安排。</span></a>
-        <a href="#day3"><span class="day-number">DAY 3 · 12/27（日）</span><strong>市區慢走、預留回程</strong><span>上午只逛一處；以 12:49 車次規劃回程，待車票確認。</span></a>
+        <a href="#day1"><span class="day-number">DAY 1 · 12/25（五）</span><strong>海邊、臭豆腐、夜市</strong><span>入住後到太平洋公園吹海風，順路吃和平路臭豆腐，晚上逛東大門。</span></a>
+        <a href="#day2"><span class="day-number">DAY 2 · 12/26（六）</span><strong>縱谷、鹽寮海鮮</strong><span>唯一開車日；白天逛縱谷，傍晚前往鹽寮吃屋銤海鮮。</span></a>
+        <a href="#day3"><span class="day-number">DAY 3 · 12/27（日）</span><strong>將軍府、預留回程</strong><span>上午逛將軍府1936；以 12:49 車次規劃回程，待車票確認。</span></a>
       </section>
 
       <div class="days">
@@ -288,26 +293,27 @@
           <div class="day-top">
             <div class="day-copy">
               <span class="day-number">DAY 1 · 12/25（五）</span>
-              <h3>抵達花蓮，入住後慢逛老屋再去夜市</h3>
-              <p class="day-summary">先在車站吃午餐、到飯店放下行李，下午只安排將軍府 1936 的市區散步，晚上再一起去東大門吃晚餐。</p>
+              <h3>抵達花蓮，先去海邊，再把肚子留給夜市</h3>
+              <p class="day-summary">先在車站吃午餐、到飯店放下行李。下午到太平洋公園南濱段散步，接著吃和平路的玉里橋頭臭豆腐；晚上再去東大門夜市。</p>
               <span class="badge draft">火車、午餐座位與接站計程車仍待確認</span>
             </div>
             <figure>
-              <img src="assets/jiangjunfu-1936-cc-by-sa.jpg" alt="花蓮將軍府1936的日式木造建築與庭院" />
-              <figcaption>將軍府1936 · <a href="https://commons.wikimedia.org/wiki/File:Jiang_Jun_Fu_1936,_Japanese-style_dormitories_by_Meilun_River,_Hualien_City_(Taiwan).jpg" target="_blank" rel="noreferrer">Malcolm Koo</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noreferrer">CC BY-SA 4.0</a> · 裁切呈現</figcaption>
+              <img src="https://tour-hualien-ws.hl.gov.tw/001/Upload/435/relpic/12302/1241/bbd2da8c-341c-4e99-a244-de36b6974e35@710x470.jpg" alt="太平洋公園南濱段入口" />
+              <figcaption>南濱公園 · <a href="https://media.taiwan.net.tw/en-us/portal/travel/details/attraction_376550000a_001241" target="_blank" rel="noreferrer">花蓮縣政府觀光處</a> · <a href="https://data.gov.tw/license" target="_blank" rel="noreferrer">政府資料開放授權第 1 版</a></figcaption>
             </figure>
           </div>
           <div class="timeline">
             <h4>今日時間軸</h4>
-            <div class="day-guide" aria-label="Day 1 行程狀態"><span class="guide flexible">去程車次與午餐座位待確認</span><span class="guide">接站用兩台計程車；飯店到將軍府可步行</span><span class="guide flexible">若雨大或疲累，省略將軍府；晚餐依天候決定是否逛夜市</span></div>
+            <div class="day-guide" aria-label="Day 1 行程狀態"><span class="guide flexible">去程車次與午餐座位待確認</span><span class="guide">下午到南濱段，再順路吃和平路臭豆腐</span><span class="guide flexible">連假候位或天候不好時，海邊縮短停留；夜市依天候調整</span></div>
             <ol class="schedule">
               <li><time>08:00–09:00</time><div><strong>台北出發</strong><br><span>目標搭直達花蓮的自強號；實際車次等台鐵開放訂票後確認。</span></div></li>
               <li class="has-photo"><time>10:30–11:30</time><div><strong>抵達花蓮車站</strong><a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=花蓮車站" target="_blank" rel="noopener noreferrer">導航 ↗</a><br><span>以此為目標抵達區間。</span></div><div class="schedule-photos"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/108-10-hualien01.jpg" alt="花蓮車站入口" loading="lazy" /><small class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:108-10-hualien01.jpg" target="_blank" rel="noreferrer">圖片：Wikimedia Commons</a></small></div></li>
               <li><time>11:30–13:25</time><div><strong>DCC 洄瀾廣場午餐</strong><a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=好正點港式點心+花蓮市國聯一路100號" target="_blank" rel="noopener noreferrer">導航 ↗</a><br><span>首選 1 樓好正點港式點心；連假營業與 8 人座位待確認。<a href="https://dccsquare.com.tw/hualien-branch/" target="_blank" rel="noopener noreferrer">看店家資訊 ↗</a></span></div></li>
-              <li class="has-photo"><time>13:30–15:00</time><div><strong>兩台計程車 → 麗翔酒店</strong><a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=麗翔酒店連鎖花蓮館+花崗街2號" target="_blank" rel="noopener noreferrer">導航 ↗</a><br><span>約 13:45 抵達並寄放行李；15:00 入住。8 人加行李，請先確認兩台車的載運空間。</span></div><div class="schedule-photos"><img src="https://pimg.1px.tw/jajama/1535869165-1228946664.jpg" alt="麗翔酒店連鎖花蓮館外觀與客房拼圖" loading="lazy" /><small class="photo-credit"><a href="https://jajama.pixnet.net/blog/posts/5067189056" target="_blank" rel="noreferrer">圖片：食。拾。辻。生活</a></small></div></li>
-              <li class="has-photo"><time>15:00–15:45</time><div><strong>飯店休息／使用設施</strong><br><span>不加塞景點，保留抵達日緩衝。</span></div><div class="schedule-photos"><img src="https://pimg.1px.tw/jajama/1535869165-1228946664.jpg" alt="麗翔酒店連鎖花蓮館外觀與客房拼圖" loading="lazy" /><small class="photo-credit"><a href="https://jajama.pixnet.net/blog/posts/5067189056" target="_blank" rel="noreferrer">圖片：食。拾。辻。生活</a></small></div></li>
-              <li class="has-photo"><time>15:45–17:20</time><div><strong>飯店 → 將軍府1936</strong><a class="map-link" href="https://www.google.com/maps/dir/?api=1&amp;origin=麗翔酒店連鎖花蓮館+花崗街2號&amp;destination=將軍府1936+花蓮市中正路622巷6號&amp;travelmode=walking" target="_blank" rel="noopener noreferrer">步行路線 ↗</a><br><span>從飯店步行約 13 分鐘；若當天不便步行，再考慮搭兩台計程車。抵達後自由逛日式宿舍群，店家與活動以當日公告為準。</span></div><div class="schedule-photos"><img src="assets/jiangjunfu-1936-cc-by-sa.jpg" alt="花蓮將軍府1936的日式木造建築與庭院" loading="lazy" /><small class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Jiang_Jun_Fu_1936,_Japanese-style_dormitories_by_Meilun_River,_Hualien_City_(Taiwan).jpg" target="_blank" rel="noreferrer">Malcolm Koo</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noreferrer">CC BY-SA 4.0</a> · 裁切呈現</small></div></li>
-              <li class="has-photo"><time>18:00–20:10</time><div><strong>東大門夜市晚餐 → 步行回飯店</strong><a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=花蓮東大門夜市" target="_blank" rel="noopener noreferrer">導航 ↗</a><br><span>約 18:20–20:00 逛夜市用餐；雨勢大則改為市區室內用餐，地點當天通知。</span></div><div class="schedule-photos"><img src="https://ws.hl.gov.tw/001/Upload/399/relpic/25832/169397/57ac2431-9f7d-43e2-a0cf-42744f632cf2.jpg" alt="花蓮東大門夜市的攤位與人潮" loading="lazy" /><small class="photo-credit"><a href="https://ws.hl.gov.tw/001/Upload/399/relpic/25832/169397/57ac2431-9f7d-43e2-a0cf-42744f632cf2.jpg" target="_blank" rel="noreferrer">圖片：花蓮縣政府</a></small></div></li>
+              <li><time>13:30–15:00</time><div><strong>兩台計程車 → 麗翔酒店</strong><a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=麗翔酒店連鎖花蓮館+花崗街2號" target="_blank" rel="noopener noreferrer">導航 ↗</a><br><span>約 13:45 抵達並寄放行李；15:00 入住。8 人加行李，請先確認兩台車的載運空間。</span></div></li>
+              <li><time>15:00–15:45</time><div><strong>飯店休息／使用設施</strong><br><span>不加塞景點，保留抵達日緩衝。</span></div></li>
+              <li class="has-photo"><time>15:45–16:45</time><div><strong>太平洋公園（南濱段）</strong><a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=太平洋公園南濱段+花蓮" target="_blank" rel="noopener noreferrer">導航 ↗</a><br><span>從飯店出發到海邊散步、看看太平洋。8 人同行可視體力決定步行或分兩台計程車；留意海風與天候。</span></div><div class="schedule-photos gallery" aria-label="太平洋公園實景照片"><div class="photo-tile"><img src="https://tour-hualien-ws.hl.gov.tw/001/Upload/435/relpic/12302/1241/bbd2da8c-341c-4e99-a244-de36b6974e35@710x470.jpg" alt="南濱公園入口" loading="lazy" /><small class="photo-credit"><a href="https://media.taiwan.net.tw/en-us/portal/travel/details/attraction_376550000a_001241" target="_blank" rel="noreferrer">花蓮縣政府觀光處</a> · <a href="https://data.gov.tw/license" target="_blank" rel="noreferrer">政府開放授權</a></small></div><div class="photo-tile"><img src="https://tour-hualien-ws.hl.gov.tw/001/Upload/435/relpic/12302/1241/be12b2fb-4d0f-4d90-bc04-a34b48f6b815@710x470.jpg" alt="太平洋公園廣場" loading="lazy" /><small class="photo-credit"><a href="https://media.taiwan.net.tw/en-us/portal/travel/details/attraction_376550000a_001241" target="_blank" rel="noreferrer">花蓮縣政府觀光處</a> · <a href="https://data.gov.tw/license" target="_blank" rel="noreferrer">政府開放授權</a></small></div><div class="photo-tile"><img src="https://tour-hualien-ws.hl.gov.tw/001/Upload/435/relpic/12302/1241/98031c18-1e98-478d-a676-c9a3ee2d1f25@710x470.png" alt="眺望太平洋公園與海景" loading="lazy" /><small class="photo-credit"><a href="https://media.taiwan.net.tw/en-us/portal/travel/details/attraction_376550000a_001241" target="_blank" rel="noreferrer">花蓮縣政府觀光處</a> · <a href="https://data.gov.tw/license" target="_blank" rel="noreferrer">政府開放授權</a></small></div></div></li>
+              <li><time>16:45–17:40</time><div><strong>玉里橋頭臭豆腐（花蓮店）</strong><a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=玉里橋頭臭豆腐花蓮店+花蓮市和平路55號" target="_blank" rel="noopener noreferrer">導航 ↗</a><a class="map-link" href="https://supertaste.tvbs.com.tw/infocard/16447" target="_blank" rel="noopener noreferrer">看店家與餐點照片 ↗</a><br><span>和平路 55 號，就在南濱段附近。當下午點心，為 8 人與連假候位留些時間；12/25 營業時間與現場排隊狀況待確認，夜市晚餐仍可彈性吃。</span></div></li>
+              <li class="has-photo"><time>18:00–20:10</time><div><strong>東大門夜市晚餐 → 步行回飯店</strong><a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=花蓮東大門夜市" target="_blank" rel="noopener noreferrer">導航 ↗</a><br><span>約 18:20–20:00 逛夜市用餐；雨勢大則改為市區室內用餐，地點當天通知。</span></div><div class="schedule-photos gallery" aria-label="東大門夜市實景照片"><div class="photo-tile"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/%E6%9D%B1%E5%A4%A7%E9%96%80%E5%A4%9C%E5%B8%82%20(36162131690).jpg?width=480" alt="東大門夜市的甜點攤位" loading="lazy" /><small class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:%E6%9D%B1%E5%A4%A7%E9%96%80%E5%A4%9C%E5%B8%82_(36162131690).jpg" target="_blank" rel="noreferrer">極地狐</a> · <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noreferrer">CC BY 2.0</a> · 裁切</small></div><div class="photo-tile"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/41-%E8%8A%B1%E8%93%AE%E6%9D%B1%E5%A4%A7%E9%96%80%E5%A4%9C%E5%B8%82%EF%BC%8C%E6%9E%97%E8%A8%98%E7%87%92%E7%95%AA%E9%BA%A5%20(29518961025).jpg?width=480" alt="東大門夜市的燒番麥攤位" loading="lazy" /><small class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:41-%E8%8A%B1%E8%93%AE%E6%9D%B1%E5%A4%A7%E9%96%80%E5%A4%9C%E5%B8%82%EF%BC%8C%E6%9E%97%E8%A8%98%E7%87%92%E7%95%AA%E9%BA%A5_(29518961025).jpg" target="_blank" rel="noreferrer">Sinchen.Lin</a> · <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noreferrer">CC BY 2.0</a> · 裁切</small></div><div class="photo-tile"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Hualien%20City11.jpg?width=480" alt="東大門夜市街景" loading="lazy" /><small class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Hualien_City11.jpg" target="_blank" rel="noreferrer">Peter in s</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noreferrer">CC BY-SA 4.0</a> · 裁切</small></div></div></li>
             </ol>
           </div>
         </article>
@@ -317,27 +323,27 @@
             <div class="day-copy">
               <span class="day-number">DAY 2 · 12/26（六）</span>
               <h3>縱谷一日：摸蜆、老屋午餐、湖景、林業記憶</h3>
-              <p class="day-summary">唯一完整的開車日。上午從立川漁場開始，在小和山谷吃午餐，再看雲山水湖景與林田山；晚餐是已選定的銘師父餐廳。</p>
-              <span class="badge draft">兩台車、取還車點與餐廳訂位待確認</span>
+              <p class="day-summary">唯一完整的開車日。上午從立川漁場開始，在小和山谷吃午餐，再看雲山水湖景與林田山；傍晚轉往鹽寮，在屋銤海鮮吃晚餐。</p>
+              <span class="badge draft">兩台車、晚間還車時間與餐廳訂位待確認</span>
             </div>
             <figure>
-              <img src="https://www.erv-nsa.gov.tw/image/11900/1024x768" alt="花蓮立川漁場的池塘與親水景觀" loading="lazy" />
-              <figcaption>立川漁場 · <a href="https://www.erv-nsa.gov.tw/zh-tw/attractions/detail/156" target="_blank" rel="noreferrer">交通部觀光署花東縱谷管理處</a></figcaption>
+              <img src="https://tour-hualien-ws.hl.gov.tw/001/Upload/435/relpic/12302/1399/4bb7f00d-bf7f-4e8a-9892-92d11c288e69@710x470.jpg" alt="花蓮立川漁場的池塘與親水景觀" loading="lazy" />
+              <figcaption>立川漁場 · <a href="https://media.taiwan.net.tw/en-us/portal/travel/details/attraction_376550000a_001399" target="_blank" rel="noreferrer">花蓮縣政府觀光處</a> · <a href="https://data.gov.tw/license" target="_blank" rel="noreferrer">政府資料開放授權第 1 版</a></figcaption>
             </figure>
           </div>
           <div class="timeline">
             <h4>今日時間軸</h4>
-            <div class="day-guide" aria-label="Day 2 行程狀態"><span class="guide flexible">兩台車的取還地點與時間待確認</span><span class="guide fixed">午餐首選小和山谷、晚餐首選銘師父</span><span class="guide flexible">若 11:40 還無法入座，改立川用餐，午後只選一處景點</span></div>
+            <div class="day-guide" aria-label="Day 2 行程狀態"><span class="guide flexible">兩台車的取還地點與晚間還車時間待確認</span><span class="guide fixed">午餐首選小和山谷、晚餐改為鹽寮屋銤海鮮</span><span class="guide flexible">若 11:40 還無法入座，改立川用餐，午後只選一處景點</span></div>
             <ol class="schedule">
               <li><time>08:00–09:20</time><div><strong>從飯店出發、兩台車取車後前往立川</strong><br><span>取車站點依附近可用車輛調整；取車、驗車與行車都已預留時間。</span></div></li>
-              <li class="has-photo"><time>09:30–10:40</time><div><strong>立川漁場</strong><a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=立川漁場+花蓮壽豐" target="_blank" rel="noopener noreferrer">導航 ↗</a><br><span>摸蜆體驗視當天氣溫與天候決定。</span></div><div class="schedule-photos"><img src="https://www.erv-nsa.gov.tw/image/11900/1024x768" alt="立川漁場的親水池塘" loading="lazy" /><small class="photo-credit"><a href="https://www.erv-nsa.gov.tw/zh-tw/attractions/detail/156" target="_blank" rel="noreferrer">圖片：花東縱谷管理處</a></small></div></li>
+              <li class="has-photo"><time>09:30–10:40</time><div><strong>立川漁場</strong><a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=立川漁場+花蓮壽豐" target="_blank" rel="noopener noreferrer">導航 ↗</a><br><span>摸蜆體驗視當天氣溫與天候決定。</span></div><div class="schedule-photos gallery" aria-label="立川漁場實景照片"><div class="photo-tile"><img src="https://tour-hualien-ws.hl.gov.tw/001/Upload/435/relpic/12302/1399/4bb7f00d-bf7f-4e8a-9892-92d11c288e69@710x470.jpg" alt="立川漁場的池塘與園區" loading="lazy" /><small class="photo-credit"><a href="https://media.taiwan.net.tw/en-us/portal/travel/details/attraction_376550000a_001399" target="_blank" rel="noreferrer">花蓮縣政府觀光處</a> · <a href="https://data.gov.tw/license" target="_blank" rel="noreferrer">政府開放授權</a></small></div><div class="photo-tile"><img src="https://tour-hualien-ws.hl.gov.tw/001/Upload/435/relpic/12302/1399/dd15a34d-83db-4be3-a13d-34fa44ea4cfe@710x470.jpg" alt="立川漁場入口的魚池" loading="lazy" /><small class="photo-credit"><a href="https://media.taiwan.net.tw/en-us/portal/travel/details/attraction_376550000a_001399" target="_blank" rel="noreferrer">花蓮縣政府觀光處</a> · <a href="https://data.gov.tw/license" target="_blank" rel="noreferrer">政府開放授權</a></small></div><div class="photo-tile"><img src="https://tour-hualien-ws.hl.gov.tw/001/Upload/435/relpic/12302/1399/f45f73cc-89db-4e06-977f-a194c7ddfc1d@710x470.jpg" alt="立川漁場展示的黃金蜆" loading="lazy" /><small class="photo-credit"><a href="https://media.taiwan.net.tw/en-us/portal/travel/details/attraction_376550000a_001399" target="_blank" rel="noreferrer">花蓮縣政府觀光處</a> · <a href="https://data.gov.tw/license" target="_blank" rel="noreferrer">政府開放授權</a></small></div></div></li>
               <li><time>10:40–11:10</time><div><strong>開車、停車，前往小和山谷</strong><br><span>留一點時間給路況與停車，不必趕著進店。</span></div></li>
               <li><time>11:10–12:30</time><div><strong><a href="https://www.facebook.com/PeacefulValley43/" target="_blank" rel="noreferrer">小和山谷午餐</a></strong><a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=小和山谷+花蓮縣壽豐鄉壽文路43號" target="_blank" rel="noopener noreferrer">導航 ↗</a><br><span>8 人用餐；12/26 營業與訂位方式待店家確認。若 11:40 仍無法入座，改回立川用餐，午後只走一處景點。</span></div></li>
-              <li class="has-photo"><time>12:45–13:45</time><div><strong>雲山水植物農場</strong><a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=雲山水植物農場" target="_blank" rel="noopener noreferrer">導航 ↗</a><br><span>天氣好就慢慢看湖景；午餐延後則可略過。</span></div><div class="schedule-photos"><img src="https://pic.pimg.tw/ajs0414/1641041842-928568757-g_l.jpg" alt="雲山水植物農場的夢幻湖與湖面倒影" loading="lazy" /><small class="photo-credit"><a href="https://pic.pimg.tw/ajs0414/1641041842-928568757-g_l.jpg" target="_blank" rel="noreferrer">圖片：ajs0414／痞客邦</a></small></div></li>
-              <li class="has-photo"><time>14:15–16:00</time><div><strong>林田山林業文化園區</strong><a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=林田山林業文化園區" target="_blank" rel="noopener noreferrer">導航 ↗</a><br><span>走進舊林業聚落，看看木造建築與山城留下的生活痕跡；館舍服務至 16:00。</span></div><div class="schedule-photos"><img src="https://hualien.forest.gov.tw/Attachments/ArticlePicture/10000221/Img/b6d02107db1e49f48bca034f9a21bfc6.jpeg" alt="林田山林業文化園區入口的木造建築" loading="lazy" /><small class="photo-credit"><a href="https://www.forest.gov.tw/0000221" target="_blank" rel="noreferrer">圖片：林業及自然保育署</a></small></div></li>
-              <li><time>16:00–17:30</time><div><strong>返回吉安／花蓮市區</strong></div></li>
-              <li class="has-photo"><time>17:30–19:30</time><div><strong>銘師父餐廳晚餐</strong><a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=銘師父餐廳+花蓮縣吉安鄉明義六街38巷22號" target="_blank" rel="noopener noreferrer">導航 ↗</a><br><span>首選已定；連假週六訂位與烤鴨仍待確認。</span></div><div class="schedule-photos"><img src="assets/mingshifu-open-data.jpg" alt="銘師父餐廳的入口外觀" loading="lazy" /><small class="photo-credit"><a href="https://data.gov.tw/dataset/7779" target="_blank" rel="noreferrer">花蓮縣政府觀光處／觀光資訊資料庫</a> · <a href="https://data.gov.tw/license" target="_blank" rel="noreferrer">政府資料開放授權條款第 1 版</a></small></div></li>
-              <li><time>19:30 後</time><div><strong>歸還 iRent，回飯店休息</strong></div></li>
+              <li class="has-photo"><time>12:45–13:45</time><div><strong>雲山水植物農場</strong><a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=雲山水植物農場" target="_blank" rel="noopener noreferrer">導航 ↗</a><br><span>天氣好就慢慢看湖景；午餐延後則可略過。</span></div><div class="schedule-photos gallery" aria-label="雲山水實景照片"><div class="photo-tile"><img src="https://tour-hualien-ws.hl.gov.tw/001/Upload/435/relpic/12302/1008/5aea0aec-d4b6-4342-a61b-659b4db7e981@710x470.jpg" alt="雲山水的湖面倒影與山景" loading="lazy" /><small class="photo-credit"><a href="https://media.taiwan.net.tw/en-us/portal/travel/details/attraction_376550000a_001008" target="_blank" rel="noreferrer">花蓮縣政府觀光處</a> · <a href="https://data.gov.tw/license" target="_blank" rel="noreferrer">政府開放授權</a></small></div><div class="photo-tile"><img src="https://tour-hualien-ws.hl.gov.tw/001/Upload/435/relpic/12302/1008/6e0e0b5f-0983-436b-8402-50154c0050fc@710x470.jpg" alt="雲山水湖岸草地與樹影" loading="lazy" /><small class="photo-credit"><a href="https://media.taiwan.net.tw/en-us/portal/travel/details/attraction_376550000a_001008" target="_blank" rel="noreferrer">花蓮縣政府觀光處</a> · <a href="https://data.gov.tw/license" target="_blank" rel="noreferrer">政府開放授權</a></small></div><div class="photo-tile"><img src="https://tour-hualien-ws.hl.gov.tw/001/Upload/435/relpic/12302/1008/70f6fda1-8e2d-4995-8387-341e387a8e3b@710x470.jpeg" alt="雲山水植物農場的建築與草地" loading="lazy" /><small class="photo-credit"><a href="https://media.taiwan.net.tw/en-us/portal/travel/details/attraction_376550000a_001008" target="_blank" rel="noreferrer">花蓮縣政府觀光處</a> · <a href="https://data.gov.tw/license" target="_blank" rel="noreferrer">政府開放授權</a></small></div></div></li>
+              <li class="has-photo"><time>14:15–16:00</time><div><strong>林田山林業文化園區</strong><a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=林田山林業文化園區" target="_blank" rel="noopener noreferrer">導航 ↗</a><br><span>走進舊林業聚落，看看木造建築與山城留下的生活痕跡；館舍服務至 16:00。</span></div><div class="schedule-photos gallery" aria-label="林田山實景照片"><div class="photo-tile"><img src="https://recreation.forest.gov.tw/Files/Forestry/CP/photo/album/0800021/01_%E6%9E%97%E7%94%B0%E5%B1%B1%E6%96%87%E5%8C%96%E5%9C%92%E5%8D%807.jpg" alt="林田山園區步道" loading="lazy" /><small class="photo-credit"><a href="https://media.taiwan.net.tw/zh-tw/portal/travel/details/attraction_345040000g_100033" target="_blank" rel="noreferrer">花蓮分署</a> · <a href="https://data.gov.tw/license" target="_blank" rel="noreferrer">政府開放授權</a></small></div><div class="photo-tile"><img src="https://recreation.forest.gov.tw/Files/Forestry/CP/photo/album/0800021/03_%E6%9E%97%E7%94%B0%E5%B1%B1%E6%96%87%E5%8C%96%E5%9C%92%E5%8D%804-%E4%BF%AE.jpg" alt="林田山文化園區空拍景色" loading="lazy" /><small class="photo-credit"><a href="https://media.taiwan.net.tw/zh-tw/portal/travel/details/attraction_345040000g_100033" target="_blank" rel="noreferrer">花蓮分署</a> · <a href="https://data.gov.tw/license" target="_blank" rel="noreferrer">政府開放授權</a></small></div><div class="photo-tile"><img src="https://recreation.forest.gov.tw/Files/Forestry/CP/photo/album/0800021/04_%E6%9E%97%E7%94%B0%E5%B1%B1%E6%96%87%E5%8C%96%E5%9C%92%E5%8D%801.jpg" alt="林田山中山堂木造建築" loading="lazy" /><small class="photo-credit"><a href="https://media.taiwan.net.tw/zh-tw/portal/travel/details/attraction_345040000g_100033" target="_blank" rel="noreferrer">花蓮分署</a> · <a href="https://data.gov.tw/license" target="_blank" rel="noreferrer">政府開放授權</a></small></div></div></li>
+              <li><time>16:00–17:30</time><div><strong>從林田山前往壽豐鹽寮</strong><a class="map-link" href="https://www.google.com/maps/dir/?api=1&amp;origin=林田山林業文化園區&amp;destination=屋銤海鮮+花蓮縣壽豐鄉鹽寮村大橋28-1號&amp;travelmode=driving" target="_blank" rel="noopener noreferrer">開車路線 ↗</a><br><span>晚餐不在花蓮市區，預留約 1.5 小時移動與停車；實際車程依當天導航。</span></div></li>
+              <li><time>17:30–19:15</time><div><strong>屋銤海鮮晚餐</strong><a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=屋銤海鮮+花蓮縣壽豐鄉鹽寮村大橋28-1號" target="_blank" rel="noopener noreferrer">導航 ↗</a><a class="map-link" href="https://supertaste.tvbs.com.tw/infocard/29885" target="_blank" rel="noopener noreferrer">看店家與餐點照片 ↗</a><br><span>花蓮縣壽豐鄉鹽寮村大橋 28-1 號。8 人連假週六用餐，先確認營業與訂位；冬季晚餐時間可能已天黑，海景不一定看得到。</span></div></li>
+              <li><time>19:15–20:15</time><div><strong>開車返回花蓮市區、歸還 iRent</strong><br><span>還車時間需涵蓋鹽寮返程，實際時段與地點待確認。</span></div></li>
             </ol>
           </div>
         </article>
@@ -346,9 +352,9 @@
           <div class="day-top">
             <div class="day-copy">
               <span class="day-number">DAY 3 · 12/27（日）</span>
-              <h3>市區慢走，留足回程餘裕</h3>
-              <p class="day-summary">退房後只選一處市區景點，行李留在飯店。以 12:49 車次安排回程；實際車次以訂票結果為準。</p>
-              <span class="badge">依天氣與長輩體力彈性選點</span>
+              <h3>最後逛將軍府，再從容踏上回程</h3>
+              <p class="day-summary">退房後把行李留在飯店，上午只逛將軍府1936；看完日式宿舍群，取行李前往車站。以 12:49 車次安排回程，實際以訂票結果為準。</p>
+              <span class="badge">依天氣與體力彈性調整停留時間</span>
             </div>
             <figure>
               <img src="assets/jiangjunfu-1936-cc-by-sa.jpg" alt="花蓮將軍府1936的日式歷史建築與庭院" loading="lazy" />
@@ -357,11 +363,11 @@
           </div>
           <div class="timeline">
             <h4>今日時間軸</h4>
-            <div class="day-guide" aria-label="Day 3 行程狀態"><span class="guide flexible">12:49 為回程目標車次，車票未確認</span><span class="guide flexible">優先鐵道文化園區；若 Day 1 未去將軍府則改去將軍府</span><span class="guide">11:10 取行李，11:20 目標上車去車站</span></div>
+            <div class="day-guide" aria-label="Day 3 行程狀態"><span class="guide flexible">12:49 為回程目標車次，車票未確認</span><span class="guide">飯店到將軍府步行約 13 分鐘；若不便步行再評估計程車</span><span class="guide">11:10 取行李，11:20 目標上車去車站</span></div>
             <ol class="schedule">
-              <li class="has-photo"><time>07:30–08:30</time><div><strong>麗翔飯店早餐</strong><br><span>實際供應時間入住時確認。</span></div><div class="schedule-photos"><img src="https://pimg.1px.tw/jajama/1535869165-1228946664.jpg" alt="麗翔酒店連鎖花蓮館外觀與客房拼圖" loading="lazy" /><small class="photo-credit"><a href="https://jajama.pixnet.net/blog/posts/5067189056" target="_blank" rel="noreferrer">圖片：食。拾。辻。生活</a></small></div></li>
+              <li><time>07:30–08:30</time><div><strong>麗翔飯店早餐</strong><br><span>實際供應時間入住時確認。</span></div></li>
               <li><time>08:30–09:20</time><div><strong>整理行李、休息、退房</strong><br><span>09:20 退房，行李寄放飯店櫃檯。</span></div></li>
-              <li class="has-photo"><time>09:30–10:40</time><div><strong>市區選一處慢慢逛</strong><a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=花蓮鐵道文化園區+中山路71號" target="_blank" rel="noopener noreferrer">鐵道園區導航 ↗</a><a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=將軍府1936+花蓮市中正路622巷6號" target="_blank" rel="noopener noreferrer">將軍府導航 ↗</a><br><span>09:30 從飯店散步出發；鐵道文化園區 10:00 開館。若 Day 1 沒去將軍府，今天改逛將軍府。約 10:40 開始走回飯店。</span></div><div class="schedule-photos"><img src="https://hlrcp.hccc.gov.tw/content/images/content/navigation-img-02.jpg" alt="花蓮鐵道文化園區的歷史建築與火車" loading="lazy" /><small class="photo-credit"><a href="https://hlrcp.hccc.gov.tw/Navigation" target="_blank" rel="noreferrer">首選照片：花蓮鐵道文化園區</a></small><img src="assets/jiangjunfu-1936-cc-by-sa.jpg" alt="花蓮將軍府1936的日式木造建築與庭院" loading="lazy" /><small class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Jiang_Jun_Fu_1936,_Japanese-style_dormitories_by_Meilun_River,_Hualien_City_(Taiwan).jpg" target="_blank" rel="noreferrer">Malcolm Koo</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noreferrer">CC BY-SA 4.0</a> · 裁切呈現（備選）</small></div></li>
+              <li class="has-photo"><time>09:30–10:40</time><div><strong>將軍府1936</strong><a class="map-link" href="https://www.google.com/maps/dir/?api=1&amp;origin=麗翔酒店連鎖花蓮館+花崗街2號&amp;destination=將軍府1936+花蓮市中正路622巷6號&amp;travelmode=walking" target="_blank" rel="noopener noreferrer">步行路線 ↗</a><br><span>09:30 從飯店出發，步行約 13 分鐘，10:00 開園後逛日式宿舍群；若當天不便步行，再評估搭兩台計程車。約 10:40 離開走回飯店。</span></div><div class="schedule-photos gallery" aria-label="將軍府1936實景照片"><div class="photo-tile"><img src="assets/jiangjunfu-1936-cc-by-sa.jpg" alt="將軍府1936的木造建築與庭院" loading="lazy" /><small class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Jiang_Jun_Fu_1936,_Japanese-style_dormitories_by_Meilun_River,_Hualien_City_(Taiwan).jpg" target="_blank" rel="noreferrer">Malcolm Koo</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noreferrer">CC BY-SA 4.0</a> · 裁切</small></div><div class="photo-tile"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Jiang%20Jun%20Fu%201936%20(Building%20A),%20Japanese-style%20dormitories%20bu%20Meilun%20River,%20Hualien%20City%20(Taiwan).jpg?width=480" alt="將軍府1936的A棟夜景" loading="lazy" /><small class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Jiang_Jun_Fu_1936_(Building_A),_Japanese-style_dormitories_bu_Meilun_River,_Hualien_City_(Taiwan).jpg" target="_blank" rel="noreferrer">Malcolm Koo</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noreferrer">CC BY-SA 4.0</a> · 裁切</small></div><div class="photo-tile"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Jiang%20Jun%20Fu%201936%20(Manor%20House),%20Japanese-style%20dormitories%20bu%20Meilun%20River,%20Hualien%20City%20(Taiwan).jpg?width=480" alt="將軍府1936官邸夜景" loading="lazy" /><small class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Jiang_Jun_Fu_1936_(Manor_House),_Japanese-style_dormitories_bu_Meilun_River,_Hualien_City_(Taiwan).jpg" target="_blank" rel="noreferrer">Malcolm Koo</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noreferrer">CC BY-SA 4.0</a> · 裁切</small></div></div></li>
               <li><time>10:40–11:10</time><div><strong>走回飯店、稍作整理</strong><br><span>將軍府路線也在 10:40 離開，避免和取行李時間重疊。</span></div></li>
               <li class="has-photo"><time>11:10–11:45</time><div><strong>取行李，兩台計程車前往花蓮車站</strong><a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=花蓮車站" target="_blank" rel="noopener noreferrer">導航 ↗</a><br><span>11:20 上車，目標 11:35–11:45 抵達。</span></div><div class="schedule-photos"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/108-10-hualien01.jpg" alt="花蓮車站入口" loading="lazy" /><small class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:108-10-hualien01.jpg" target="_blank" rel="noreferrer">圖片：Wikimedia Commons</a></small></div></li>
               <li class="has-photo"><time>11:45–12:30</time><div><strong>車站採買與候車</strong><br><span>購買午餐、飲料或伴手禮；12:30 前往月台。</span></div><div class="schedule-photos"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/108-10-hualien01.jpg" alt="花蓮車站入口" loading="lazy" /><small class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:108-10-hualien01.jpg" target="_blank" rel="noreferrer">圖片：Wikimedia Commons</a></small></div></li>
@@ -377,7 +383,7 @@
           <ul class="checks">
             <li><strong>集合與車票：</strong>去回程車次、集合車站與時間都還沒定；12:49 只是目前的回程目標。</li>
             <li><strong>第二天移動：</strong>預計 8 人分兩台車；取還車地點確定後，再看當天的集合通知。</li>
-            <li><strong>用餐與天候：</strong>連假訂位、營業時間與摸蜆活動尚待確認；小和山谷若候位太久，午後會少走一站。</li>
+            <li><strong>用餐與天候：</strong>小和山谷、屋銤海鮮的連假營業與訂位，以及摸蜆活動都待確認；午餐若候位太久，午後會少走一站。</li>
           </ul>
         </article>
       </section>
